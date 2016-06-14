@@ -1,0 +1,8 @@
+Observations & Experimentations
+===============================
+
+1. Dataset contains 11 features, out of which one is target. I have to process every feature, in order to generalise my model.
+2. There is no need of passenger ID in the model, hence discarding it while reading the dataset.
+3. Passenger class is numeric, and seems important for generalisation. Plus no missing value.
+4. I can't think any dependency of name with survival. Hence, dropping it.
+5. Converting sex of a passenger into numerical value and adding it in feature list.
