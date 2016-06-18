@@ -6,3 +6,23 @@ Observations & Experimentations
 3. Passenger class is numeric, and seems important for generalisation. Plus no missing value.
 4. I can't think any dependency of name with survival. Hence, dropping it.
 5. Converting sex of a passenger into numerical value and adding it in feature list.
+6. 177 passengers have missing age in dataset. That's almost 20 percent of training set.
+7. Lets not consider age in the model for now.
+8. Adding Sibsp and Parch in the feature list. Both contains no missing values.
+9. I don't think I can use ticket number as a feature in my model. 
+10. Leaving the ticket number for now.
+11. Adding fare to the feature list.
+12. 687 passengers have missing cabin data. It's 77 percent of training set.
+13. Lemme verify whether it will be beneficial to add cabin data to the feature list.
+14. 15 percent of passengers who are survived has their cabin data, whereas only 0.07 percent of passengers who are not survived has their cabin data.
+15. Instead of a single model, titanic dataset will need model ensembles in order to classify the survived passengers.
+16. Leaving cabin data for the feature list.
+17. Only two passengers have missing embarked data.
+18. Checking missing data in test dataset.
+19. 1 passenger have missing fare data in test dataset.
+20. No passenger have missing embarked data in test dataset.
+21. I need to find a way to fill embarked data and fare data in train and test dataset respectively in order to use at least 6 feature list for my model.
+22. Turned out, 15 passengers has 0 fare in dataset.
+23. Finding average of fare for different pClass.
+24. Average fare for 1st, 2nd, and 3rd class are 86.15, 21.36, and 13.79 respectively.
+25. The problem with titanic dataset is number of unique passengers are only 445, if considering 5 features.
