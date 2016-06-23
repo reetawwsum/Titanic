@@ -63,7 +63,7 @@ def process_raw_data(raw_data):
 	# Adding fare to the feature list
 	raw_data[((raw_data[:, 7] == '0') | (raw_data[:, 7] == '')) & (raw_data[:, 0] == '1'), 7] = '86.15'
 	raw_data[((raw_data[:, 7] == '0') | (raw_data[:, 7] == '')) & (raw_data[:, 0] == '2'), 7] = '21.36'
-	raw_data[((raw_data[:, 7] == '0') | (raw_data[:, 7] == '')) & (raw_data[:, 0] == '3'), 7] = '21.36'
+	raw_data[((raw_data[:, 7] == '0') | (raw_data[:, 7] == '')) & (raw_data[:, 0] == '3'), 7] = '13.79'
 
 	data = np.append(data, np.reshape(raw_data[:, 7], (-1, 1)).astype(float), 1)
 
