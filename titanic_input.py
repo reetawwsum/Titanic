@@ -67,9 +67,17 @@ def process_raw_data(raw_data):
 
 	data = np.append(data, np.reshape(raw_data[:, 7], (-1, 1)).astype(float), 1)
 
+	# Adding embarked to the feature list
+	raw_data[raw_data[:, 9] == '', 9] = 'S'
+
+	le = preprocessing.LabelEncoder()
+	le.fit(raw_data[:, 9])
+
+	data = np.append(data, np.reshape(le.transform(raw_data[:, 9]), (-1, 1)), 1)
+
 	return data
 
-raw_data, target = read_train_file()
-
-data = process_raw_data(raw_data)
-
+if __name__ == '__main__':
+	raw_data, target = read_train_file()
+	data = process_raw_data(raw_data)
+	
