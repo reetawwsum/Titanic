@@ -31,3 +31,15 @@ Observations & Experimentations
 28. Instead of filling 177 missing age with mean or median, it's better to check what kind of relationship does age have with fare and class of a passenger.
 29. Relationship is not straight forward. I'm thinking to use linear regression model to predict the age of the passengers first, and then use that to predict the survival.
 30. I can generalise this to all missing values in dataset.
+31. With 6 feature list, I'm getting 71-79 percent accuracy score on validation set using RandomForest Classifier.
+0.766666666667
+[[46 12]
+ [ 9 23]]
+
+0.744444444444
+[[45 13]
+ [10 22]]
+
+0.711111111111
+[[43 14]
+ [12 21]]
