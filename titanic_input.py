@@ -42,6 +42,14 @@ def read_test_file():
 
 	return raw_data
 
+def write_output(predictions, file_name):
+	with open(file_path + file_name, 'wb') as f:
+		csv_writer = csv.writer(f, delimiter=',')
+		csv_writer.writerow(['PassengerId', 'Survived'])
+
+		for i, prediction in enumerate(predictions):
+			csv_writer.writerow([i+892, prediction])
+
 def process_raw_data(raw_data):
 	data = []
 
@@ -80,4 +88,3 @@ def process_raw_data(raw_data):
 if __name__ == '__main__':
 	raw_data, target = read_train_file()
 	data = process_raw_data(raw_data)
-	
