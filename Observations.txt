@@ -26,3 +26,7 @@ Observations & Experimentations
 23. Finding average of fare for different pClass.
 24. Average fare for 1st, 2nd, and 3rd class are 86.15, 21.36, and 13.79 respectively.
 25. The problem with titanic dataset is number of unique passengers are only 445, if considering 5 features.
+26. Two missing embarked passengers are both female, from first class, and both survived.
+27. Filling missing embarked data with 'S' in train dataset, since more 1 class, female, survival boarded from S.
+28. Instead of filling 177 missing age with mean or median, it's better to check what kind of relationship does age have with fare and class of a passenger.
+29. Relationship is not straight forward. I'm thinking to use linear regression model to predict the age of the passengers first, and then use that to predict the survival.
