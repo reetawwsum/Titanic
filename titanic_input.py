@@ -86,5 +86,9 @@ def process_raw_data(raw_data):
 	return data
 
 if __name__ == '__main__':
-	raw_data, target = read_train_file()
+	raw_train_data, target = read_train_file()
+	raw_test_data = read_test_file()
+
+	raw_data = np.append(raw_train_data, raw_test_data, axis=0)
+
 	data = process_raw_data(raw_data)
