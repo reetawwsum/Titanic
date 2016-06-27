@@ -43,3 +43,4 @@ Observations & Experimentations
 0.711111111111
 [[43 14]
  [12 21]]
+32. Instead of filling the missing values in train and test dataset separately, it will be better if I merge them, and then fill the missing values, and separate it afterwards.
