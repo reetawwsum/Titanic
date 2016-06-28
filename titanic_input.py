@@ -83,6 +83,35 @@ def process_raw_data(raw_data):
 
 	data = np.append(data, np.reshape(le.transform(raw_data[:, 9]), (-1, 1)), 1)
 
+	# Adding family size to the feature list
+	data = np.append(data, np.reshape(data[:, 2] + data[:, 3], (-1, 1)), 1)
+
+	# Adding title of the name to the feature list
+	title_labels = ['Mrs', 'Mr', 'Miss', 'Master', 'Don', 'Rev', 'Dr', 'Mme', 'Ms', 'Major', 'Col']
+	names = raw_data[:, 1]
+	titles = []
+
+	for name in names:
+		title_index = -1
+
+		for i, title in enumerate(title_labels):
+			if title in name:
+				title_index = i
+				break
+
+		titles.append(title_index)
+
+	titles = np.array(titles)
+
+	data = np.append(data, np.reshape(titles, (-1, 1)), 1)
+
+	# Adding age to the feature list
+	ages = raw_data[:, 3]
+	
+	ages[ages == ''] = np.mean(ages[ages != ''].astype(float))
+
+	data = np.append(data, np.reshape(ages, (-1, 1)).astype(float), 1)
+
 	return data
 
 if __name__ == '__main__':
