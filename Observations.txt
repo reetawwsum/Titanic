@@ -44,3 +44,13 @@ Observations & Experimentations
 [[43 14]
  [12 21]]
 32. Instead of filling the missing values in train and test dataset separately, it will be better if I merge them, and then fill the missing values, and separate it afterwards.
+33. I have to perform feature engineering to create new features in order to get more accuracy.
+34. Added family size to the feature list.
+35. Adding title of the name to the feature list.
+36. Total 875 different family names in dataset.
+37. Added family name to the feature list.
+38. But, family name is not helping. Discarding the code for family name.
+39. Total 263 missing age in dataset.
+40. Either, I can fill the missing age with -1, or mean value, or using regression method, predict the missing age in the dataset.
+41. Filling the missing age with -1 doesn't help much.
+42. Filling the missing age with mean, improves the accuracy.
