@@ -135,7 +135,7 @@ def process_raw_data(raw_data):
 
 	data = np.append(data, np.reshape(digits, (-1, 1)), 1)
 
-	# Adding ticket type in case of alphanumerica tickets to the feature list. Adding -1 in case of numeric ticket
+	# Adding ticket type in case of alphanumeric tickets to the feature list. Adding -1 in case of numeric ticket
 	ticket_types = ['A/5', 'A./5', 'A.5', 'PC', 'STON', 'PP', 'SC', 'S.C', 'C.A', 'CA', 'SOTON', 'F.C.C', 'S.O.C', 'A/4', 'A4', 'SP', 'S.P', 'SO/C', 'W./C', 'W.E.P', 'C', 'S.O.P', 'Fa', 'LINE', 'A/S', 'WE/P', 'S.O', 'LP', 'AQ', 'A']
 	types = []
 
