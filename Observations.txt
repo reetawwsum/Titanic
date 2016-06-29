@@ -54,3 +54,8 @@ Observations & Experimentations
 40. Either, I can fill the missing age with -1, or mean value, or using regression method, predict the missing age in the dataset.
 41. Filling the missing age with -1 doesn't help much.
 42. Filling the missing age with mean, improves the accuracy.
+43. Trying to use ticket number as a feature in the model.
+44. Dataset contains 957 numeric and 352 alphanumeric ticket numbers.
+45. Added numeric/alphanumeric ticket feature in the model.
+46. Added number of digits in numeric ticket as a feature in the model. Encoding this feature as -1 for alphanumeric ticket number.
+47. Added ticket type in case of alphanumeric ticket as a feature in the model. Encoding this feature as -1 for numeric ticket number.
