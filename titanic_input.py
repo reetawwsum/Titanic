@@ -112,6 +112,49 @@ def process_raw_data(raw_data):
 
 	data = np.append(data, np.reshape(ages, (-1, 1)).astype(float), 1)
 
+	# Adding Numeric - 0 & Alphanumeric - 1 ticket number to the feature list
+	ticket_numbers = raw_data[:, 6]
+	tickets = []
+
+	for ticket in ticket_numbers:
+		if ticket.isdigit():
+			tickets.append(0)
+		else:
+			tickets.append(1)
+
+	data = np.append(data, np.reshape(tickets, (-1, 1)), 1)
+
+	# Adding number of digits in numeric tickets to the feature list. Adding -1 in case of alphanumeric ticket
+	digits = []
+
+	for ticket in ticket_numbers:
+		if ticket.isdigit():
+			digits.append(len(ticket))
+		else:
+			digits.append(-1)
+
+	data = np.append(data, np.reshape(digits, (-1, 1)), 1)
+
+	# Adding ticket type in case of alphanumerica tickets to the feature list. Adding -1 in case of numeric ticket
+	ticket_types = ['A/5', 'A./5', 'A.5', 'PC', 'STON', 'PP', 'SC', 'S.C', 'C.A', 'CA', 'SOTON', 'F.C.C', 'S.O.C', 'A/4', 'A4', 'SP', 'S.P', 'SO/C', 'W./C', 'W.E.P', 'C', 'S.O.P', 'Fa', 'LINE', 'A/S', 'WE/P', 'S.O', 'LP', 'AQ', 'A']
+	types = []
+
+	for ticket in ticket_numbers:
+		if ticket.isdigit():
+			types.append(-1)
+			continue
+
+		for i, ticket_type in enumerate(ticket_types):
+			if ticket_type in ticket:
+				ticket_type_index = i
+				break
+
+		types.append(ticket_type_index)
+
+	types = np.array(types)
+
+	data = np.append(data, np.reshape(types, (-1, 1)), 1)
+
 	return data
 
 if __name__ == '__main__':
